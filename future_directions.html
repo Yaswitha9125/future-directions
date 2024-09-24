@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://db.onlinewebfonts.com/c/edc378fa3251080c5b508b220462efca?family=Gotham-Thin" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <!-- Mars image and page title -->
+        <div class="title">
+            <h1>Page Title</h1>
+        </div>
+
+        <div class="layout">
+            <!-- Table of contents (on the left) -->
+            <div class="toc">
+                <!-- <h2>Table of Contents</h2> -->
+                <ul>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section4">Heading 4</a></li>
+                </ul>
+            </div>
+
+            <!-- Content Sections (on the right) -->
+            <div class="content">
+                <div id="section1" class="section">
+                    <h2>Heading 1</h2>
+                    <p>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content</p>
+                </div>
+
+                <div id="section2" class="section">
+                    <h2>Heading 2</h2>
+                    <p>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content </p>
+                </div>
+
+                <div id="section3" class="section">
+                    <h2>Heading 3</h2>
+                    <p>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content </p>
+                    <p>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content  </p>
+                    <p>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content  </p>
+                </div>
+
+                <div id="section4" class="section">
+                    <h2>Heading 4</h2>
+                    <p>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content</p>
+                    <p>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content</p>
+                    <p>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content</p>
+                    <p>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content</p>
+                    <p>content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Grab all the sections and links in the TOC
+            const sections = document.querySelectorAll(".section");
+            const tocLinks = document.querySelectorAll(".toc ul li a");
+    
+            // Intersection Observer options
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.5 // 50% of the section must be visible
+            };
+    
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    const id = entry.target.id;
+    
+                    // If section is in view (intersecting)
+                    if (entry.isIntersecting) {
+                        // Remove 'active' class from all links
+                        tocLinks.forEach(link => {
+                            link.classList.remove('active');
+                        });
+    
+                        // Add 'active' class to the corresponding TOC link
+                        const activeLink = document.querySelector(`.toc ul li a[href="#${id}"]`);
+                        activeLink.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+    
+            // Observe all sections
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+    
+
+</body>
+</html>

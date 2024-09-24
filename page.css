@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Gotham-Thin";
+    font-weight: bold;
+    background: linear-gradient(to bottom right, #2F3F52, #85555C, #F47169); /* Gradient background */
+    color: white;
+}
+
+@font-face{
+    font-family: "Gotham-Thin";
+    src: url("https://db.onlinewebfonts.com/t/edc378fa3251080c5b508b220462efca.eot");
+    src: url("https://db.onlinewebfonts.com/t/edc378fa3251080c5b508b220462efca.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/edc378fa3251080c5b508b220462efca.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/edc378fa3251080c5b508b220462efca.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/edc378fa3251080c5b508b220462efca.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/edc378fa3251080c5b508b220462efca.svg#Gotham-Thin")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
+
+/* Mars Image as Background */
+.title {
+    position: relative;
+    height: 300px; /* Adjust height as needed */
+    background-image: url('asserts/Mars Spinning.gif'); /* Mars image as background */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; /* Adds spacing after the image/title section */
+}
+
+/* Page Title Overlay */
+.title h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    /* background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability 
+    padding: 10px 20px;
+    border-radius: 10px; */
+}
+
+.page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Mars Image */
+.mars-image {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Page Title */
+.title h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Layout for TOC and Content */
+.layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+/* Table of Contents (Left side) */
+.toc {
+    flex-basis: 20%;
+    text-align: left;
+    padding-right: 20px;
+    border-right: 2px solid white;
+    position: sticky;
+    top: 20vw;
+}
+
+/* Active TOC link */
+.toc ul li a.active {
+    color: #ffdd00; /* Highlight color */
+    font-size: 1.2em; /* Larger size to highlight */
+}
+
+
+.toc h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.toc ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.toc ul li {
+    margin: 10px 0;
+}
+
+.toc ul li a {
+    color: #f0d278;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toc ul li a:hover {
+    text-decoration: none;
+}
+
+/* Content Sections (Right side) */
+.content {
+    flex-basis: 75%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.section h2 {
+    color: #f0d278;
+    font-weight: bold;
+    margin: 4rem 0 2rem 0;
+    text-align: center;
+}
+
+.section p {
+    font-size: 0.9em;
+    text-align: justify;
+    line-height: 1.6;
+}
